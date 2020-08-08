@@ -1,0 +1,7 @@
+domain: moricho.io
+repo: github.com/moricho/tenant-controller
+resources:
+- group: multitenancy
+  kind: Tenant
+  version: v1
+version: "2"
