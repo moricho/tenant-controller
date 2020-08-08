@@ -1,7 +1,14 @@
 apiVersion: multitenancy.moricho.io/v1
 kind: Tenant
 metadata:
-  name: tenant-sample
+  name: sample
 spec:
-  # Add fields here
-  foo: bar
+  namespaces:
+    - test1
+    - test2
+  namespacePrefix: sample-
+  admin:
+    kind: User
+    name: test
+    namespace: default
+    apiGroup: rbac.authorization.k8s.io

@@ -34,7 +34,7 @@ func (r *Tenant) SetupWebhookWithManager(mgr ctrl.Manager) error {
 
 // EDIT THIS FILE!  THIS IS SCAFFOLDING FOR YOU TO OWN!
 
-// +kubebuilder:webhook:path=/mutate-multitenancy-moricho-io-v1-tenant,mutating=true,failurePolicy=fail,groups=multitenancy.moricho.io,resources=tenants,verbs=create;update,versions=v1,name=mtenant.kb.io
+// +kubebuilder:webhook:path=/mutate-multitenancy-moricho-io-v1-tenant,mutating=true,failurePolicy=fail,groups=multitenancy.moricho.io,resources=tenants,verbs=create,versions=v1,name=mtenant.kb.io
 
 var _ webhook.Defaulter = &Tenant{}
 
@@ -46,7 +46,7 @@ func (r *Tenant) Default() {
 }
 
 // TODO(user): change verbs to "verbs=create;update;delete" if you want to enable deletion validation.
-// +kubebuilder:webhook:verbs=create;update,path=/validate-multitenancy-moricho-io-v1-tenant,mutating=false,failurePolicy=fail,groups=multitenancy.moricho.io,resources=tenants,versions=v1,name=vtenant.kb.io
+// +kubebuilder:webhook:verbs=update,path=/validate-multitenancy-moricho-io-v1-tenant,mutating=false,failurePolicy=fail,groups=multitenancy.moricho.io,resources=tenants,versions=v1,name=vtenant.kb.io
 
 var _ webhook.Validator = &Tenant{}
 
